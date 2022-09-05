@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity 0.8.16;
 
 contract Whitelist {
   uint8 public maxWhitelistedAddresses;
@@ -12,7 +12,7 @@ contract Whitelist {
     maxWhitelistedAddresses = _maxWhitelistedAddresses;
   }
 
-  function addAddressToWhitelist() public {
+  function addAddressToWhitelist() external {
     require(!whitelistedAddresses[msg.sender], "Sender has already been whitelisted");
 
     require(numAddressesWhitelisted < maxWhitelistedAddresses, "More addresses cant be added, limit reached");
