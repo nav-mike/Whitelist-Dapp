@@ -3,15 +3,15 @@ require("dotenv").config({ path: ".env" });
 
 ALCHEMY_API_KEY_URL = process.env.ALCHEMY_API_KEY_URL;
 
-RINKEBY_PRIVATE_KEY = process.env.RINKEBY_PRIVATE_KEY;
+GOERLI_PRIVATE_KEY = process.env.GOERLI_PRIVATE_KEY;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.9",
+  solidity: "0.8.16",
   networks: {
-    rinkeby: {
+    goerli: {
       url: ALCHEMY_API_KEY_URL,
-      accounts: [RINKEBY_PRIVATE_KEY],
+      accounts: [GOERLI_PRIVATE_KEY],
     },
   },
 };
